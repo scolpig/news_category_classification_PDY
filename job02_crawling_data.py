@@ -5,14 +5,8 @@
 # 도영님이 세계, IT
 # 다 되면 PR 부탁드립니다!!!
 
-# html 문서로 변환
-from bs4 import BeautifulSoup
-import requests
-import re
+
 import pandas as pd
-import datetime
-
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -35,8 +29,8 @@ driver = webdriver.Chrome(service=service, options=options)
 button_xpath = '//*[@id="newsct"]/div[4]/div/div[2]/a'
 
 # 도영 담당: World(104), IT(105)
-for section in range(4, 6):
-    url = 'https://news.naver.com/section/10{}'.format(section)
+for SECTION, CATEGORY in zip(range(4, 6), category[4:6]):
+    url = 'https://news.naver.com/section/10{}'.format(SECTION)
     driver.get(url)
 
     # 더보기 클릭
@@ -56,7 +50,7 @@ for section in range(4, 6):
                 print('error', j, k)
 
     df_section_titles = pd.DataFrame(titles, columns=['titles'])
-    df_section_titles['category'] = category[section]
+    df_section_titles['category'] = CATEGORY
 
     df_titles = pd.concat([df_titles, df_section_titles], ignore_index=True)
 
