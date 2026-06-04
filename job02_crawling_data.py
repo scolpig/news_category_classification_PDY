@@ -45,7 +45,7 @@ for section in range(4, 6):
         time.sleep(0.5)
 
     titles = []
-    for j in range(1, 181):
+    for j in range(1, 180):
         for k in range(1, 7):
             try:
                 title_xpath = '//*[@id="newsct"]/div[4]/div/div[1]/div[{}]/ul/li[{}]/div/div/div[2]/a/strong'.format(
