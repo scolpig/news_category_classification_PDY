@@ -1,8 +1,8 @@
 # 파일명은 naver_news_section.csv
 # 컬럼명은 titles, category로 해주세요!
-# 00님이 정치, 경제
-# 01님이 사회, 문화
-# 02님이 세계, IT
+# 영재님이 정치, 경제
+# 유정님이 사회, 문화
+# 도영님이 세계, IT
 # 다 되면 PR 부탁드립니다!!!
 
 from selenium import webdriver
